@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>uTask - Login</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body class="light-mode">
+   
+    <div class="controls">
+        <button class="control-btn" id="languageToggle" title="Change Language">
+            <i class="fas fa-language"></i>
+            <span id="langText">MN</span>
+        </button>
+        <button class="control-btn" id="themeToggle" title="Toggle Theme">
+            <i class="fas fa-moon" id="themeIcon"></i>
+        </button>
+    </div>
+
+    <div class="main-container">
+        
+        <div class="hero-section">
+            <div class="hero-content">
+                
+                <div class="floating-circle circle-1"></div>
+                <div class="floating-circle circle-2"></div>
+                <div class="floating-circle circle-3"></div>
+                <div class="star-trail trail-1"></div>
+                <div class="star-trail trail-2"></div>
+                <div class="star-trail trail-3"></div>
+
+                
+                <div class="speech-bubble">
+                    <div class="speech-dots">
+                        <span></span><span></span><span></span>
+                        <span></span><span></span><span></span>
+                    </div>
+                </div>
+
+               
+                <div class="infinity-symbol">∞</div>
+
+                
+                <div class="astronaut-container">
+                    <svg class="astronaut" viewBox="0 0 200 300" xmlns="http://www.w3.org/2000/svg">
+                        
+                        <ellipse cx="100" cy="180" rx="45" ry="60" fill="#f5f5f5"/>
+                        <!-- Helmet -->
+                        <circle cx="100" cy="120" r="50" fill="#f5f5f5"/>
+                        <circle cx="100" cy="120" r="42" fill="#1e293b" opacity="0.3"/>
+                        <!-- Arms -->
+                        <ellipse cx="60" cy="160" rx="12" ry="35" fill="#f5f5f5" transform="rotate(-30 60 160)"/>
+                        <ellipse cx="140" cy="160" rx="12" ry="35" fill="#f5f5f5" transform="rotate(30 140 160)"/>
+                        <!-- Legs -->
+                        <ellipse cx="85" cy="240" rx="15" ry="45" fill="#f5f5f5" transform="rotate(-20 85 240)"/>
+                        <ellipse cx="115" cy="240" rx="15" ry="45" fill="#f5f5f5" transform="rotate(20 115 240)"/>
+                        <!-- Gloves and boots accent -->
+                        <ellipse cx="55" cy="190" rx="8" ry="12" fill="#fbbf24"/>
+                        <ellipse cx="145" cy="190" rx="8" ry="12" fill="#fbbf24"/>
+                        <ellipse cx="78" cy="280" rx="10" ry="8" fill="#fbbf24"/>
+                        <ellipse cx="122" cy="280" rx="10" ry="8" fill="#fbbf24"/>
+                    </svg>
+                </div>
+
+                <!-- Hero text -->
+                <div class="hero-text">
+                    <h1 class="hero-title" data-en="Turn your ideas into reality." data-mn="Өөрийн санаануудыг бодит байдал болго." data-mn-mong="ᠦᠦᠷᠢᠢᠨ ᠰᠠᠨᠠᠨᠤᠳᠢᠢᠭ ᠪᠣᠳᠢᠲ ᠪᠠᠢᠳᠠᠯ ᠪᠣᠯᠭᠣ.">
+                        Turn your ideas into reality.
+                    </h1>
+                   
+                </div>
+
+                <!-- Visit site button -->
+                <button class="btn-visit-site">
+                    
+                    
+                </button>
+            </div>
+        </div>
+
+        <!-- Right Side - Login Form -->
+        <div class="form-section">
+            <div class="form-container" id="loginWrapper">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <div class="logo-text">uTask</div>
+                </div>
+
+                <!-- Welcome Heading -->
+                <h1 class="welcome-heading" data-en="Welcome Back" data-mn="Тавтай морил" data-mn-mong="ᠲᠠᠪᠲᠠᠢ ᠮᠣᠷᠢᠯ">Welcome Back</h1>
+                <p class="form-subtitle" data-en="Login to your account" data-mn="Бүртгэлдээ нэвтрэх" data-mn-mong="ᠪᠦᠷᠲᠧᠭᠧᠯᠳᠧᠧ ᠨᠧᠪᠲᠧᠷᠧᠬ">Login to your account</p>
+
+                <!-- Login Form -->
+                <form id="loginForm">
+                    <div class="input-group">
+                        <label for="email" data-en="Email or username" data-mn="Имэйл эсвэл username" data-mn-mong="Email or username">Email or username</label>
+                        <input type="text" id="email" name="email" data-placeholder-en="admin or mail@abc.com" data-placeholder-mn="admin or mail@abc.com" data-placeholder-mn-mong="admin or mail@abc.com" placeholder="admin or mail@abc.com" required>
+                    </div>
+                    <div class="input-group password-group">
+                        <label for="password" data-en="Password" data-mn="Нууц үг" data-mn-mong="ᠨᠤᠤᠴ ᠦᠭ">Password</label>
+                        <input type="password" id="password" name="password" data-placeholder-en="Enter your password" data-placeholder-mn="Нууц үгээ оруулна уу" data-placeholder-mn-mong="ᠨᠤᠤᠴ ᠦᠭᠧᠧ ᠣᠷᠤᠤᠯᠨᠠ ᠤ" placeholder="Enter your password" required>
+                        <button type="button" class="toggle-password" id="togglePassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+
+                    <!-- Remember me and Forgot password -->
+                    <div class="form-options">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberMe" checked>
+                            <span data-en="Remember Me" data-mn="Намайг сана" data-mn-mong="ᠨᠠᠮᠠᠢᠭ ᠰᠠᠨᠠ">Remember Me</span>
+                        </label>
+                        <a href="#" class="forgot-link" id="forgotPasswordLink" data-en="Forgot Password?" data-mn="Нууц үгээ мартсан уу?" data-mn-mong="ᠨᠤᠤᠴ ᠦᠭᠧᠧ ᠮᠠᠷᠲᠠᠨ ᠤ?">Forgot Password?</a>
+                    </div>
+
+                    <button type="submit" class="btn-login" data-en="Login" data-mn="Нэвтрэх" data-mn-mong="ᠨᠧᠪᠲᠧᠷᠧᠬ">Login</button>
+                    <p class="error-message" id="errorMessage"></p>
+                    <p class="success-message" id="successMessage"></p>
+                </form>
+
+                <!-- Create New Account Button -->
+                <button type="button" class="btn-create-account" id="createAccountBtn">
+                    <span data-en="Create new account" data-mn="Шинэ бүртгэл үүсгэх" data-mn-mong="ᠰᠢᠨᠡ ᠪᠦᠷᠲᠧᠭᠧᠯ ᠦᠦᠰᠢᠭᠡᠬ">Create new account</span>
+                </button>
+
+                <!-- Divider -->
+                <div class="divider">
+                    <span data-en="Or continue with" data-mn="Эсвэл үргэлжлүүлэх" data-mn-mong="ᠧᠰᠧᠪᠧᠯ ᠦᠷᠭᠧᠯᠵᠦᠦᠯᠧᠬ">Or continue with</span>
+                </div>
+
+                <!-- Social Login -->
+                <div class="social-login">
+                    <button class="btn-social" id="googleBtn">
+                        <svg class="social-icon" viewBox="0 0 24 24" width="20" height="20">
+                            <path fill="#4285F4" d="M22.56 12.25c0-.78-.07-1.53-.2-2.25H12v4.26h5.92c-.26 1.37-1.04 2.53-2.21 3.31v2.77h3.57c2.08-1.92 3.28-4.74 3.28-8.09z"/>
+                            <path fill="#34A853" d="M12 23c2.97 0 5.46-.98 7.28-2.66l-3.57-2.77c-.98.66-2.23 1.06-3.71 1.06-2.86 0-5.29-1.93-6.16-4.53H2.18v2.84C3.99 20.53 7.7 23 12 23z"/>
+                            <path fill="#FBBC05" d="M5.84 14.09c-.22-.66-.35-1.36-.35-2.09s.13-1.43.35-2.09V7.07H2.18C1.43 8.55 1 10.22 1 12s.43 3.45 1.18 4.93l2.85-2.22.81-.62z"/>
+                            <path fill="#EA4335" d="M12 5.38c1.62 0 3.06.56 4.21 1.64l3.15-3.15C17.45 2.09 14.97 1 12 1 7.7 1 3.99 3.47 2.18 7.07l3.66 2.84c.87-2.6 3.3-4.53 6.16-4.53z"/>
+                        </svg>
+                        <span data-en="Google" data-mn="Google" data-mn-mong="Google">Google</span>
+                    </button>
+                    <button class="btn-social" id="facebookBtn">
+                        <i class="fab fa-facebook-f"></i>
+                        <span data-en="Facebook" data-mn="Facebook" data-mn-mong="Facebook">Facebook</span>
+                    </button>
+                </div>
+
+                <!-- Sign up link -->
+                <div class="signup-link">
+                    <span data-en="Not Registered Yet?" data-mn="Бүртгэлгүй юу?" data-mn-mong="ᠪᠦᠷᠲᠧᠭᠧᠯᠭᠦᠦ ᠢᠤ?">Not Registered Yet?</span>
+                    <button type="button" class="btn-link-inline" id="signUpBtn" data-en="Create an account" data-mn="Бүртгэл үүсгэх" data-mn-mong="ᠪᠦᠷᠲᠧᠭᠧᠯ ᠦᠦᠰᠢᠭᠡᠬ">Create an account</button>
+                </div>
+            </div>
+
+            <!-- Sign Up Form (Hidden initially) -->
+            <div class="form-container register-container" id="registerBox" style="display: none;">
+                <!-- Logo -->
+                <div class="logo-container">
+                    <div class="logo-text">uTask</div>
+                </div>
+
+                <!-- Welcome Heading -->
+                <h1 class="welcome-heading" data-en="Welcome to uTask!" data-mn="uTask-д тавтай морил!" data-mn-mong="uTask-ᠳ ᠲᠠᠪᠲᠠᠢ ᠮᠣᠷᠢᠯ!">Welcome to uTask!</h1>
+                <p class="form-subtitle" data-en="Register your account" data-mn="Бүртгэл үүсгэх" data-mn-mong="ᠪᠦᠷᠲᠧᠭᠧᠯ ᠦᠦᠰᠢᠭᠡᠬ">Register your account</p>
+
+                <!-- Sign Up Form -->
+                <form id="registerForm">
+                    <div class="input-group">
+                        <label for="regName" data-en="Name" data-mn="Нэр" data-mn-mong="ᠨᠧᠷ">Name</label>
+                        <input type="text" id="regName" name="regName" data-placeholder-en="Enter your name" data-placeholder-mn="Нэрээ оруулна уу" data-placeholder-mn-mong="ᠨᠧᠷᠧᠧ ᠣᠷᠤᠤᠯᠨᠠ ᠤ" placeholder="Enter your name" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="regEmail" data-en="Email" data-mn="Имэйл" data-mn-mong="ᠢᠮᠧᠢᠯ">Email</label>
+                        <input type="email" id="regEmail" name="regEmail" data-placeholder-en="mail@abc.com" data-placeholder-mn="mail@abc.com" data-placeholder-mn-mong="mail@abc.com" placeholder="mail@abc.com" required>
+                    </div>
+                    <div class="input-group">
+                        <label for="regUsername" data-en="Username" data-mn="Хэрэглэгчийн нэр" data-mn-mong="ᠬᠧᠷᠧᠭᠯᠧᠭᠴᠢᠢᠨ ᠨᠧᠷ">Username</label>
+                        <input type="text" id="regUsername" name="regUsername" data-placeholder-en="Choose a username" data-placeholder-mn="Хэрэглэгчийн нэр сонгоно уу" data-placeholder-mn-mong="ᠬᠧᠷᠧᠭᠯᠧᠭᠴᠢᠢᠨ ᠨᠧᠷ ᠰᠣᠨᠭᠣᠨᠣ ᠤ" placeholder="Choose a username" required>
+                    </div>
+                    <div class="input-group password-group">
+                        <label for="regPassword" data-en="Password" data-mn="Нууц үг" data-mn-mong="ᠨᠤᠤᠴ ᠦᠭ">Password</label>
+                        <input type="password" id="regPassword" name="regPassword" data-placeholder-en="8+ characters" data-placeholder-mn="8+ тэмдэгт" data-placeholder-mn-mong="8+ ᠲᠧᠮᠳᠧᠭᠲ" placeholder="8+ characters" required>
+                        <button type="button" class="toggle-password" id="toggleRegPassword">
+                            <i class="fas fa-eye"></i>
+                        </button>
+                    </div>
+                    <button type="submit" class="btn-login" data-en="Sign Up" data-mn="Бүртгүүлэх" data-mn-mong="ᠪᠦᠷᠲᠧᠭᠦᠦᠯᠧᠬ">Sign Up</button>
+                    <p class="error-message" id="regErrorMessage"></p>
+                    <p class="success-message" id="regSuccessMessage"></p>
+                </form>
+
+                <!-- Sign in link -->
+                <div class="signup-link">
+                    <span data-en="Already have an account?" data-mn="Бүртгэлтэй юу?" data-mn-mong="ᠪᠦᠷᠲᠧᠭᠧᠯᠲᠧᠢ ᠢᠤ?">Already have an account?</span>
+                    <button type="button" class="btn-link-inline" id="showLogin" data-en="Sign In" data-mn="Нэвтрэх" data-mn-mong="ᠨᠧᠪᠲᠧᠷᠧᠬ">Sign In</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

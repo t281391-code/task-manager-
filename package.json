@@ -1,0 +1,13 @@
+{
+  "name": "utask-app",
+  "version": "1.0.0",
+  "description": "Task Management Dashboard with JSON Server",
+  "scripts": {
+    "server": "json-server --watch db.json --port 3000",
+    "start": "json-server --watch db.json --port 3000"
+  },
+  "dependencies": {
+    "json-server": "^0.17.4"
+  },
+  "devDependencies": {}
+}
