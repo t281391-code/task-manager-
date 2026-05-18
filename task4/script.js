@@ -33,7 +33,7 @@ async function loadUsersFromAPI() {
 // Load users from static JSON file (fallback)
 async function loadUsersFromJSONFile() {
     try {
-        const response = await fetch('users.json');
+        const response = await fetch('/task4/users.json');
         if (response.ok) {
             const data = await response.json();
             users = data.users || [];
