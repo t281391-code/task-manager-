@@ -13,6 +13,11 @@ async function loadUsersFromAPI() {
             localStorage.setItem('users', JSON.stringify({ users: users }));
             return true;
         }
+        console.log('API returned an error, trying localStorage or static file');
+        if (loadUsersFromStorage()) {
+            return true;
+        }
+        return await loadUsersFromJSONFile();
     } catch (error) {
         console.log('Could not load users from API, trying localStorage or static file');
         // Fallback to localStorage

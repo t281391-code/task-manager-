@@ -1,16 +1,9 @@
 {
-  "version": 2,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/static"
-    }
-  ],
-  "routes": [
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "rewrites": [
+    { "source": "/task4", "destination": "/task4/index.html" },
+    { "source": "/task4/", "destination": "/task4/index.html" }
   ],
   "headers": [
     {
