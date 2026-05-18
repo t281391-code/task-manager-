@@ -1,6 +1,10 @@
 // Хэлний функциональ language.js руу шилжсэн
 
 // DOM бүрэн ачаалагдтыг хүлээх
+if (!sessionStorage.getItem('loggedInUser')) {
+    window.location.replace('task4/index.html');
+}
+
 document.addEventListener('DOMContentLoaded', () => {
     const body = document.body;
     
